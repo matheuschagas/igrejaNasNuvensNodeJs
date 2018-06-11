@@ -1,9 +1,9 @@
-var db = require("../../db");
+let db = require("../../db");
 
 exports.getPais = function (ids, callbackSuccess, callbackError) {
     try {
-        var sqlCondition = '';
-        for(var i = 0; i < ids.length; i++){
+        let sqlCondition = '';
+        for(let i = 0; i < ids.length; i++){
             if(i===0){
                 sqlCondition += ' WHERE id = ' + ids[i];
             }else{
@@ -13,8 +13,8 @@ exports.getPais = function (ids, callbackSuccess, callbackError) {
         db.get().query(('SELECT * FROM membro'+sqlCondition), function (err, rows, fields) {
             if (rows && rows.length > 0) {
                 if (callbackSuccess && typeof(callbackSuccess) === "function") {
-                    var pais = [];
-                    for(var i=0; i < rows.length; i++){
+                    let pais = [];
+                    for(let i=0; i < rows.length; i++){
                         pais.push(JSON.parse(JSON.stringify(rows[i])));
                     }
                     // execute the callback, passing parameters as necessary
@@ -37,8 +37,8 @@ exports.getPais = function (ids, callbackSuccess, callbackError) {
 
 exports.get = function (ids, callbackSuccess, callbackError) {
     try {
-        var sqlCondition = '';
-        for(var i = 0; i < ids.length; i++){
+        let sqlCondition = '';
+        for(let i = 0; i < ids.length; i++){
             if(i===0){
                 sqlCondition += ' WHERE id = ' + ids[i];
             }else{
@@ -48,8 +48,8 @@ exports.get = function (ids, callbackSuccess, callbackError) {
         db.get().query(('SELECT * FROM membro'+sqlCondition), function (err, rows, fields) {
             if (rows && rows.length > 0) {
                 if (callbackSuccess && typeof(callbackSuccess) === "function") {
-                    var pais = [];
-                    for(var i=0; i < rows.length; i++){
+                    let pais = [];
+                    for(let i=0; i < rows.length; i++){
                         pais.push(JSON.parse(JSON.stringify(rows[i])));
                     }
                     // execute the callback, passing parameters as necessary

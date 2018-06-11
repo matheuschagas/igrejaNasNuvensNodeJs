@@ -1,1 +1,1 @@
-var db = require("../../db");
+let db = require("../../db");

@@ -8,6 +8,7 @@ var bodyParser = require('body-parser');
 var index = require('./app/controllers/index');
 var criancas = require('./app/controllers/crianca');
 var inscricoes = require('./app/controllers/inscricoes');
+var checkin = require('./app/controllers/checkin');
 
 var app = express();
 db.connect(db.MODE_PRODUCTION, function(err) {
@@ -36,6 +37,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/inscricoes', inscricoes);
+app.use('/checkin', checkin);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

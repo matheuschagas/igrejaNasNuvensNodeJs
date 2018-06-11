@@ -1,6 +1,6 @@
-var db = require("../../db");
+let db = require("../../db");
 
-exports.get = function (id, callbackSuccess, callbackError) {
+exports.getAll = function (id, callbackSuccess, callbackError) {
     try {
         db.get().query(('SELECT nomeCompleto, email FROM inscricao WHERE status=\'approved\' AND evento_id = ' + id), function (err, rows, fields) {
             if (rows && rows.length > 0) {

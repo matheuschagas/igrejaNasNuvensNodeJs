@@ -1,5 +1,5 @@
-var db = require("../../db");
-var membroModel = require('./membro');
+let db = require("../../db");
+let membroModel = require('./membro');
 
 exports.get = function (id, callbackSuccess, callbackError) {
     try {
@@ -7,10 +7,10 @@ exports.get = function (id, callbackSuccess, callbackError) {
             if (rows && rows.length > 0) {
                 if (callbackSuccess && typeof(callbackSuccess) === "function") {
                     console.log(JSON.stringify(rows[0]));
-                    var crianca = JSON.parse(JSON.stringify(rows[0]));
-                    var pai = null;
-                    var mae = null;
-                    var pais = [];
+                    let crianca = JSON.parse(JSON.stringify(rows[0]));
+                    let pai = null;
+                    let mae = null;
+                    let pais = [];
                     if(crianca.pai && crianca.pai !== null)
                         pais.push(crianca.pai);
                     if(crianca.mae && crianca.mae !== null)

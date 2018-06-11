@@ -1,6 +1,6 @@
-var express = require('express');
-var router = express.Router();
-var inscricoesModel = require('../models/inscricoes');
+let express = require('express');
+let router = express.Router();
+let inscricoesModel = require('../models/inscricoes');
 
 /* GET child listing. */
 router.get('/', function(req, res, next) {
@@ -10,8 +10,8 @@ router.get('/', function(req, res, next) {
 /* Retrieves a specific child. */
 router.get('/:id', function(req, res, next) {
     try{
-        var id = parseInt(req.params["id"]);
-        inscricoesModel.get(id, function (result) {
+        let id = parseInt(req.params["id"]);
+        inscricoesModel.getAll(id, function (result) {
             res.json(result);
         }, function (error) {
             throw error;
