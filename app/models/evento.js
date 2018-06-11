@@ -1,8 +1,8 @@
 let db = require("../../db");
 
 getData = (date) => {
-    console.log(date);
-    return date.toLocaleDateString();
+    console.log(date.toLocaleDateString({}, { timeZone: 'America/Sao_Paulo' }));
+    return date.toLocaleDateString({}, { timeZone: 'America/Sao_Paulo' });
 };
 
 exports.getDateID = function (date, evento) {
