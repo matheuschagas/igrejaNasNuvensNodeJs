@@ -3,7 +3,7 @@ let db = require("../../db");
 getData = (date) => {
     let finalDate = date.toLocaleDateString({}, { timeZone: 'America/Sao_Paulo' }).split('/');
     console.log(finalDate);
-    return finalDate[2]+'-'+finalDate[1]+'-'+finalDate[0];
+    return finalDate[2]+'-'+finalDate[0]+'-'+finalDate[1];
 };
 
 exports.getDateID = function (date, evento) {
