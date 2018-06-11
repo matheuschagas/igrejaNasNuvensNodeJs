@@ -2,7 +2,7 @@ var db = require("../../db");
 
 exports.get = function (id, callbackSuccess, callbackError) {
     try {
-        db.get().query(('SELECT nomeCompleto, email FROM inscricao WHERE evento_id = ' + id), function (err, rows, fields) {
+        db.get().query(('SELECT nomeCompleto, email FROM inscricao WHERE status=\'approved\' AND evento_id = ' + id), function (err, rows, fields) {
             if (rows && rows.length > 0) {
                 if (callbackSuccess && typeof(callbackSuccess) === "function") {
                     console.log(rows);
