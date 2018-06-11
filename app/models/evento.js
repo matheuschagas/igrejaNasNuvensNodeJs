@@ -1,6 +1,7 @@
 let db = require("../../db");
 
 getData = (date) => {
+    console.log(date);
     return date.toLocaleDateString();
 };
 
